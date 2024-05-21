@@ -103,7 +103,7 @@ func serveHome(w http.ResponseWriter, r *http.Request) {
 func serveWs(w http.ResponseWriter, r *http.Request) {
 	conn, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
-		log.Logger.Info().Any("upgrade:", err)
+		log.Logger.Error().AnErr("upgrade:", err)
 		return
 	}
 	// go pumpStdout(conn)
@@ -114,6 +114,7 @@ func serveWs(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	wsConn = conn
+	log.Logger.Info().Msg("有新连接接入")
 }
 
 func PortCheck(port int) bool {
