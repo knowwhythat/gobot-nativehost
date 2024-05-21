@@ -30,5 +30,5 @@ func Init() {
 	fileName := logDir + time.Now().Format("2006-01-02") + ".log"
 	logFile, _ := os.OpenFile(fileName, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0644)
 	multi := zerolog.MultiLevelWriter(logFile)
-	Logger = zerolog.New(multi).With().Timestamp().Logger().With().Caller().Logger()
+	Logger = zerolog.New(multi).With().Timestamp().Logger()
 }
