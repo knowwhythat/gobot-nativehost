@@ -1,0 +1,7 @@
+{
+  "name": "com.gobot.chrome",
+  "description": "GoBot Chrome extension",
+  "path": "gobot-nativehost.exe",
+  "type": "stdio",
+  "allowed_origins": ["chrome-extension://mdgfhbhlliceamdfbkllpiipnhgbjkcj/","chrome-extension://mdaikoemjnmfkoaclgkhghoglgbeheal/"]
+}
